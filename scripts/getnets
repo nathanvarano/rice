@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# add check to see if password is needed
+
+SSID=$(nmcli dev wifi | awk 'NR>1 {print $2}' | rofi -dmenu -theme Pop-Dark.rasi)
+
+[[ -z $SSID ]] && exit
+password=$(rofi -dmenu -theme Pop-Dark.rasi -p "Password: ")
+[[ -z $password ]] && exit
+
+echo $network
+echo $password
+
+# nmcli dev wifi connect $SSID password $password

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# add check to see if password is needed
+
+device=$(nmcli device | awk '$2=="ethernet" {print $1}' | rofi -dmenu -theme Pop-Dark.rasi -p 'Select connection')
+
+[[ -z $device ]] && exit
+
+
+disconnectdevices=$(nmcli device | awk -v var="$device" '$2=="ethernet" && $1!=var {print $1}')
+
+for i in $disconnectdevices
+  do
+    nmcli device disconnect $i && nmcli device connect $i
+  done
+

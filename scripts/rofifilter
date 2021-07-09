@@ -1,0 +1,35 @@
+#!/bin/bash
+
+
+selection=$(echo \
+'Chromium
+Firefox
+Discord
+URXVT
+ST
+VS-Code
+Brave
+Nautilus'\
+ | rofi -dmenu run -theme dmenu.rasi -p 'RUN' -i)
+
+[[ -z $selection ]] && exit
+
+
+
+if [[ $selection = 'Chrome' ]]; then
+	exec google-chrome-stable
+elif [[ $selection = 'Firefox' ]]; then
+	exec firefox
+elif [[ $selection = 'Discord' ]]; then
+	exec discord
+elif [[ $selection = 'RXVT' ]]; then
+	exec urxvt
+elif [[ $selection = 'ST' ]]; then
+	exec st
+elif [[ $selection = 'VS-Code' ]]; then
+	exec code
+elif [[ $selection = 'Brave' ]]; then
+	exec brave
+elif [[ $selection = 'Nautilus' ]]; then
+	exec nautilus
+fi

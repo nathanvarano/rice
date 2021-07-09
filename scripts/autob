@@ -1,0 +1,8 @@
+#!/bin/bash
+
+[[ -z $1 ]] && exit
+
+BRAILLE_FOLDER="$HOME/doc/braille"
+BRAILLE_FILE="$BRAILLE_FOLDER/$1"
+
+gedit $BRAILLE_FILE

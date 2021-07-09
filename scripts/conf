@@ -1,0 +1,46 @@
+#!/bin/bash
+
+CONF_FOLDER="$HOME/.config"
+CONF_FILE="$CONF_FOLDER/$1/config"
+HOME_FILE="$HOME/$1"
+
+
+if [[ -f $CONF_FILE ]]; then
+	vim $CONF_FILE
+elif [[ -f $HOME_FILE ]]; then
+	vim $HOME_FILE
+elif [[ $1 = "i3" ]]; then
+	vim $HOME/.config/i3/config
+elif [[ $1 = "polybar" ]]; then
+	vim $HOME/.config/polybar/config
+elif [[ $1 = "compton" ]]; then
+	vim $HOME/.config/compton/compton.conf
+elif [[ $1 = "flameshot" ]]; then
+	vim $HOME/.config/flameshot/flameshot.ini
+elif [[ $1 = "dunst" ]]; then
+	vim $HOME/.config/dunst/dunstrc
+elif [[ $1 = "qutebrowser" ]]; then
+	vim $HOME/.config/qutebrowser/config.py
+elif [[ $1 = "ranger" ]]; then
+	vim $HOME/.config/ranger/rc.conf
+elif [[ $1 = "st" ]]; then
+	vim $HOME/rep/st/config.h
+elif [[ $1 = "gallery-dl" ]]; then
+	vim $HOME/.config/gallery-dl/config.json
+elif [[ $1 = "zsh-syntax-highlighting" ]]; then
+	vim /usr/share/zsh/plugins/zsh-syntax-highlighting/highlighters/main/main-highlighter.zsh
+elif [[ $1 = "zsh-autosuggestions" ]]; then
+	vim /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+elif [[ $1 = "zsh" ]]; then
+	vim $HOME/.config/zsh/.zshrc
+elif [[ $1 = "vim" ]]; then
+	vim $HOME/.config/vim/vimrc
+elif [[ $1 = "Xresources" ]]; then
+	vim $HOME/.config/X11/Xresources
+elif [[ $1 = "xinitrc" ]]; then
+	vim $HOME/.config/X11/xinitrc
+elif [[ $1 = "slate" ]]; then
+	sudo vim /usr/share/vim/vim82/colors/slate.vim
+else
+	echo No config found for $1
+fi

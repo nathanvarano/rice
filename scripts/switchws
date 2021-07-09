@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+curr_ws=$(i3-msg -t get_workspaces \
+		|  jq '.[] | select(.focused==true).name' \
+		| cut -d"\"" -f2)
+
+[[ $curr_ws == $1 ]] && exit
+
+
+i3-msg "rename workspace $curr_ws to 11; rename workspace $1 to $curr_ws; rename workspace 11 to $1;" && sleep 0.1 && i3-msg "workspace number $curr_ws;"
