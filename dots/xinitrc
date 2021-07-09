@@ -1,0 +1,5 @@
+xrandr --fbmm 6400x3600 --output DP-0 --pos 0x0 --mode 2560x1440 --scale 1.5x1.5 --primary --output DP-4 --pos 3840x0 --mode 3840x2160 --scale 1x1
+setxkbmap -option caps:escape
+xset r rate 200 25
+xrdb $HOME/.config/X11/Xresources
+exec i3

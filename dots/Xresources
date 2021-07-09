@@ -1,0 +1,71 @@
+*.cursorColor: #afbfbf
+
+! black
+*.color0: #21292F
+*.color8: #31393f
+
+! red
+*.color1: #334455
+*.color9: #445566
+
+! green
+*.color2: #96BFFF
+*.color10: #6E8AB8
+
+! yellow
+*.color3: #C5DFFF
+*.color11: #8EB3DE
+
+! blue
+*.color4: #8CA2E6
+*.color12: #6D81BD
+
+! magenta
+*.color5: #FF1245
+*.color13: #FF88AA
+
+! cyan
+*.color6: #556677
+*.color14: #667788
+
+! white
+*.color7: #b5b9bf
+*.color15: #e5e9ef
+
+!! URxvt Appearance
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+URxvt.geometry: 92x24
+URxvt.internalBorder: 24
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.saveline: 2048
+URxvt.urgentOnBell: true
+URxvt.depth: 24
+
+st.letterSpace: 0
+st.lineSpace: 0
+st.internalBorder: 24
+st.geometry: 92x24
+st.saveline: 2048
+st.depth: 24
+
+URxvt.urlLauncher: firefox
+URxvt.underlineURLs: true
+URxvt.scrollBar: false
+
+!! *.font: xft:Consolas:size=12:antialias=true, xft:symbola:size=20
+URxvt.font: xft:JetBrainsMono Nerd Font:size=14:antialias=true, xft:Symbola:size=20, xft:Material Icons:size=20
+!!*.font: JetBrainsMon!!!o Nerd Font:style:medium:pixelsize=20!!
+!!st.font: xft:JetBrainsMono Nerd Font:size=14
+st.font:         JetBrainsMono Nerd Font:style:medium:pixelsize=30
+
+URxvt*background: 1
+URxvt*foreground: 15
+
+Sxiv.background: #25292f
+Sxiv.foreground: #e5e9ef
+
+Xcursor.size: 48
+
+Xft.dpi: 192
