@@ -4,6 +4,8 @@ export VIMINIT="set nocp | source ${XDG_CONFIG_HOME:-$HOME/.config}/vim/vimrc"
 
 export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#21292F,hl:#96BFFF --color=fg+:#f8f8f2,bg+:#44475a,hl+:#96BFFF --color=info:#C5DFFF,prompt:#8CA2E6,pointer:#96BFFF --color=marker:#96BFFF,spinner:#C5DFFF,header:#C5DFFF'
 
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE="$ZDOTDIR/.zsh_history"
@@ -50,8 +52,10 @@ _comp_options+=(globdots)
 
 [[ $- != *i* ]] && return
 
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /home/nv/.local/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/nv/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /home/nv/scr/srcenv
 
 alias ls='ls --color=auto'
