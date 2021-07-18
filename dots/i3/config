@@ -35,8 +35,6 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && notify-send "Volume" "$(amixer get Master | grep 22894 -m 1 | sed 's/\(^[a-z0-9 :]\+\[\|\[\|\]\)//gi' | awk '{print $1}')"
-#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && notify-send "Volume" "$(amixer get Master | grep 22894 -m 1 | sed 's/\(^[a-z0-9 :]\+\[\|\[\|\]\)//gi' | awk '{print $1}')"
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && notify-send --hint=string:x-dunst-stack-tag:volume -i /usr/share/icons/Dracula/16x16/actions/audio-volume-high.svg "Volume" "$(amixer get Master | grep 'Front Right:\|dB' | sed 's/\(^[a-z0-9 :]\+\[\|\[\|\]\)//gi' | awk '{print $1}')"
@@ -270,23 +268,17 @@ assign [class="Google-chrome"] $ws8
 assign [class="discord"] $ws9
 
 bindsym $mod+b workspace number 8; exec --no-startup-id google-chrome-stable
-bindsym $mod+shift+b exec --no-startup-id chromium
-bindsym $mod+z exec --no-startup-id start-vivaldi
-bindsym $mod+p exec --no-startup-id flameshot gui -p /home/nv/img/screenshots
-bindsym $mod+shift+s exec --no-startup-id flameshot gui -p /home/nv/img/screenshots
-bindsym $mod+shift+p exec --no-startup-id flameshot screen -p /home/nv/img/screenshots
+bindsym $mod+p exec --no-startup-id flameshot gui -p $HOME/img/screenshots
+bindsym $mod+shift+s exec --no-startup-id flameshot gui -p $HOME/img/screenshots
+bindsym $mod+shift+p exec --no-startup-id flameshot screen -p $HOME/img/screenshots
 bindsym $mod+c workspace number 9; exec --no-startup-id discord
-#bindsym $mod+Shift+c exec --no-startup-id discord
 bindsym $mod+n exec --no-startup-id rofinet
-bindsym $mod+e exec --no-startup-id getdlcache
 bindsym $mod+o exec --no-startup-id darkbg
-bindsym $mod+shift+o exec --no-startup-id feh --no-fehbg --bg-scale /home/nv/img/wallpaper.png
+bindsym $mod+shift+o exec --no-startup-id feh --no-fehbg --bg-scale $HOME/img/wallpaper.png
 bindsym $mod+t exec --no-startup-id /opt/appimages/Joplin.AppImage
 
-
-
-exec_always --no-startup-id source /home/nv/scr/srcenv
-exec_always --no-startup-id feh --no-fehbg --bg-scale /home/nv/img/wallpaper.png
+exec_always --no-startup-id source $HOME/scr/srcenv
+exec_always --no-startup-id feh --no-fehbg --bg-scale $HOME/img/wallpaper.png
 exec_always --no-startup-id polybarstart
 exec --no-startup-id flameshot
 exec --no-startup-id dunst
