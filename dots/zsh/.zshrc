@@ -63,7 +63,7 @@ alias sxiv='sxiv -s f'
 alias todo='auton todo'
 alias vim='vim -u ${XDG_CONFIG_HOME:-$HOME/.config}/vim/vimrc'
 alias startx='startx "$XDG_CONFIG_HOME/X11/xinitrc"'
-alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias ranger='ranger --choosedir=$XDG_CACHE_HOME/ranger/.rangerdir; LASTDIR=`cat $XDG_CACHE_HOME/ranger/.rangerdir`; cd "$LASTDIR"'
 
 PS1='%F{14}%1~ %f%B%F{15} %F{2} %F{15} %b%f '
 randbraille
