@@ -35,10 +35,13 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && notify-send "Volume" "$(amixer get Master | grep 22894 -m 1 | sed 's/\(^[a-z0-9 :]\+\[\|\[\|\]\)//gi' | awk '{print $1}')"
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && notify-send "Volume" "$(amixer get Master | grep 22894 -m 1 | sed 's/\(^[a-z0-9 :]\+\[\|\[\|\]\)//gi' | awk '{print $1}')"
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && notify-send --hint=string:x-dunst-stack-tag:volume -i /usr/share/icons/Dracula/16x16/actions/audio-volume-high.svg "Volume" "$(amixer get Master | grep 'Front Right:\|dB' | sed 's/\(^[a-z0-9 :]\+\[\|\[\|\]\)//gi' | awk '{print $1}')"
+
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && notify-send --hint=string:x-dunst-stack-tag:volume -i /usr/share/icons/Dracula/16x16/actions/audio-volume-high.svg "Volume" "$(amixer get Master | grep 'Front Right:\|dB' | sed 's/\(^[a-z0-9 :]\+\[\|\[\|\]\)//gi' | awk '{print $1}')"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -230,7 +233,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-floating_minimum_size 1280 x 960
+#floating_minimum_size 1280 x 960
 floating_maximum_size 2560 x 1920
 
 for_window [class=".*"] move position center
@@ -279,13 +282,6 @@ bindsym $mod+e exec --no-startup-id getdlcache
 bindsym $mod+o exec --no-startup-id darkbg
 bindsym $mod+shift+o exec --no-startup-id feh --no-fehbg --bg-scale /home/nv/img/wallpaper.png
 bindsym $mod+t exec --no-startup-id /opt/appimages/Joplin.AppImage
-
-# can be done better with jq
-# see here: https://i3wm.org/docs/user-contributed/swapping-workspaces.html
-# or here: https://faq.i3wm.org/question/6200/obtain-info-on-current-workspace-etc.1.html 
-#bindsym $mod+$mod2+7 exec --no-startup-id switchws (current focus) 7
-#bindsym $mod+$mod2+8 exec --no-startup-id switchws (current focus) 8
-#bindsym $mod+$mod2+9 exec --no-startup-id switchws (current focus) 9
 
 
 

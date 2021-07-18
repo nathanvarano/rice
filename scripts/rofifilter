@@ -2,14 +2,17 @@
 
 
 selection=$(echo \
-'Chromium
-Firefox
+'Brave
+Chromium
 Discord
-URXVT
+Drawing
+Firefox
+Kdenlive
+Krita
+Nautilus
 ST
-VS-Code
-Brave
-Nautilus'\
+URXVT
+VS-Code'\
  | rofi -dmenu run -theme dmenu.rasi -p 'RUN' -i)
 
 [[ -z $selection ]] && exit
@@ -32,4 +35,10 @@ elif [[ $selection = 'Brave' ]]; then
 	exec brave
 elif [[ $selection = 'Nautilus' ]]; then
 	exec nautilus
+elif [[ $selection = 'Kdenlive' ]]; then
+	exec kdenlive
+elif [[ $selection = 'Krita' ]]; then
+	exec krita
+elif [[ $selection = 'Drawing' ]]; then
+	exec drawing
 fi
