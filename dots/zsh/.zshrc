@@ -47,16 +47,16 @@ precmd_functions+=(_fix_cursor)
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-compinit -d /home/nv/.cache/zsh/zcompdump-$ZSH_VERSION
+compinit -d $HOME/.cache/zsh/zcompdump-$ZSH_VERSION
 _comp_options+=(globdots)
 
 [[ $- != *i* ]] && return
 
 #source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /home/nv/.local/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.local/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 #source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /home/nv/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /home/nv/scr/srcenv
+source $HOME/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/scr/srcenv
 
 alias ls='ls --color=auto'
 alias sxiv='sxiv -s f'
