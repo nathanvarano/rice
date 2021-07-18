@@ -264,10 +264,11 @@ client.placeholder		#35393F	#25292F #0000FF	#C5DFFF	#25292F
 #gaps inner 3
 #gaps outer 5
 
-assign [class="Google-chrome"] $ws8
+assign [class="Vivaldi-stable"] $ws8
 assign [class="discord"] $ws9
 
-bindsym $mod+b workspace number 8; exec --no-startup-id google-chrome-stable
+bindsym $mod+b workspace number 8; exec --no-startup-id vivaldi-stable
+bindsym $mod+shift+b exec --no-startup-id google-chrome-stable
 bindsym $mod+p exec --no-startup-id flameshot gui -p $HOME/img/screenshots
 bindsym $mod+shift+s exec --no-startup-id flameshot gui -p $HOME/img/screenshots
 bindsym $mod+shift+p exec --no-startup-id flameshot screen -p $HOME/img/screenshots

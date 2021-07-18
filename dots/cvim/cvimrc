@@ -1,0 +1,18 @@
+let fullpagescrollpercent = 10
+set smoothscroll
+imap <C-e> editWithVim
+map <A-e> eHintDL
+map <C-e> EHintDL
+map <A-p> fHintDL
+map <C-p> FHintDL
+map <A-m> mHintDL
+map [ goBack
+map ] goForward
+map <A-q> closeTab
+map J scrollFullPageDown
+map K scrollFullPageUp
+map <A-h> previousTab
+map <A-l> nextTab
+map F createTabbedHint
+map I fullImageHint
+let vimport = 8001
