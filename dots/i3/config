@@ -198,7 +198,7 @@ bindsym $mod+Shift+9 exec --no-startup-id switchws 9
 bindsym $mod+Shift+0 exec --no-startup-id switchws 0
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+#bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -277,6 +277,7 @@ bindsym $mod+n exec --no-startup-id rofinet
 bindsym $mod+o exec --no-startup-id darkbg
 bindsym $mod+shift+o exec --no-startup-id feh --no-fehbg --bg-scale $HOME/img/wallpaper.png
 bindsym $mod+t exec --no-startup-id /opt/appimages/Joplin.AppImage
+bindsym $mod+shift+c exec --no-startup-id notify-send "test" $(currprogram)
 
 exec_always --no-startup-id source $HOME/scr/srcenv
 exec_always --no-startup-id feh --no-fehbg --bg-scale $HOME/img/wallpaper.png

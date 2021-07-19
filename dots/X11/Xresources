@@ -54,8 +54,8 @@ URxvt.urlLauncher: firefox
 URxvt.underlineURLs: true
 URxvt.scrollBar: false
 
-URxvt.font: xft:JetBrainsMono Nerd Font:size=14:antialias=true, xft:Symbola:size=20, xft:Material Icons:size=20
-st.font:         JetBrainsMono Nerd Font:style:medium:pixelsize=30
+URxvt.font: xft:JetBrainsMono Nerd Font:size=14:antialias=true, xft:Symbola:size=20, xft:Material Icons:size=20,
+st.font:         JetBrainsMono Nerd Font:style:medium:pixelsize=30, xft:IPAPGothic:size=20
 
 URxvt*background: 1
 URxvt*foreground: 15

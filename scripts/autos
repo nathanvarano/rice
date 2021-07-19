@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCRIPT_FOLDER="$HOME/scr"
+SCRIPT_FOLDER="$HOME/rep/rice/scripts"
 SCRIPT_FILE="$SCRIPT_FOLDER/$1"
 
 if [[ -f $SCRIPT_FILE ]]; then
@@ -8,5 +8,6 @@ if [[ -f $SCRIPT_FILE ]]; then
 else 
 	echo '#!/bin/bash' > $SCRIPT_FILE
 	chmod +x $SCRIPT_FILE
+	( cd $HOME/scr ; ln -s ../rep/rice/scripts/$1 )
 	vim $SCRIPT_FILE
 fi

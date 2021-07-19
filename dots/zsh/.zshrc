@@ -61,7 +61,7 @@ source $HOME/scr/srcenv
 alias ls='ls --color=auto'
 alias sxiv='sxiv -s f'
 alias todo='auton todo'
-alias vim='vim -u ${XDG_CONFIG_HOME:-$HOME/.config}/vim/vimrc'
+#alias vim='vim -u ${XDG_CONFIG_HOME:-$HOME/.config}/vim/vimrc'
 alias startx='startx "$XDG_CONFIG_HOME/X11/xinitrc"'
 alias ranger='ranger --choosedir=$XDG_CACHE_HOME/ranger/.rangerdir; LASTDIR=`cat $XDG_CACHE_HOME/ranger/.rangerdir`; cd "$LASTDIR"'
 
