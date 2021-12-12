@@ -2,7 +2,7 @@
 
 export EDITOR="vim"
 export TERMINAL="st"
-export BROWSER="brave"
+export BROWSER="google-chrome-stable"
 
 export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc-2.0"
 export LESSHISTFILE="-"
@@ -19,3 +19,5 @@ export GDK_SCALE=2
 export GDK_DPI_SCALE=0.5
 export VSCODE_PORTABLE="$XDG_DATA_HOME"/vscode
 #export VIMINIT='source "$XDG_CONFIG_HOME/vim/vimrc"'
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker

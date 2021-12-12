@@ -2,7 +2,7 @@
 
 # add check to see if password is needed
 
-device=$(nmcli device | awk '$2=="ethernet" {print $1}' | rofi -dmenu -theme Pop-Dark.rasi -p 'Select connection')
+device=$(nmcli device | awk '$2=="ethernet" {print $1}' | rofi -dmenu -theme Center-Dark.rasi -p 'Select connection')
 
 [[ -z $device ]] && exit
 

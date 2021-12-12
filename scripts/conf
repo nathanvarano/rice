@@ -39,6 +39,22 @@ elif [[ $1 = "xinitrc" ]]; then
 	vim $HOME/.config/X11/xinitrc
 elif [[ $1 = "slate" ]]; then
 	sudo vim /usr/share/vim/vim82/colors/slate.vim
+elif [[ $1 = "xmonad" ]]; then
+	vim $HOME/.xmonad/xmonad.hs
+elif [[ $1 = "xmobar" ]]; then
+	vim $HOME/.config/xmobar/xmobarrc
+elif [[ $1 = "zsh_alias" ]]; then
+	vim $HOME/.config/zsh/zsh_alias
+elif [[ $1 = "conf" ]]; then
+	vim $HOME/scr/conf
+elif [[ $1 = "Center-Dark" ]]; then
+	vim $HOME/.local/share/rofi/themes/Center-Dark.rasi
+elif [[ $1 = "Pop-Dark" ]]; then
+	vim $HOME/.local/share/rofi/themes/Pop-Dark.rasi
+elif [[ $1 = "survive" ]]; then
+	vim $HOME/.local/share/rofi/themes/survive.rasi
+elif [[ $1 = "Pop-Dark-Thin" ]]; then
+	vim $HOME/.local/share/rofi/themes/Pop-Dark-Thin.rasi
 else
 	echo No config found for $1
 fi

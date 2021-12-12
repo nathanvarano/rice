@@ -2,15 +2,15 @@
 
 ! black
 *.color0: #21292F
-*.color8: #31393f
+*.color8: #414955
 
 ! red
-*.color1: #334455
-*.color9: #445566
+*.color1: #FF88AA
+*.color9: #FF3478
 
 ! green
-*.color2: #96BFFF
-*.color10: #6E8AB8
+*.color2: #96FFBF
+*.color10: #76CF98
 
 ! yellow
 *.color3: #C5DFFF
@@ -25,12 +25,12 @@
 *.color13: #FF88AA
 
 ! cyan
-*.color6: #556677
-*.color14: #667788
+*.color6: #667788
+*.color14: #778899
 
 ! white
-*.color7: #b5b9bf
-*.color15: #e5e9ef
+*.color7: #EEFAFF
+*.color15: #E5E9EF
 
 !! URxvt Appearance
 URxvt.letterSpace: 0
@@ -55,14 +55,10 @@ URxvt.underlineURLs: true
 URxvt.scrollBar: false
 
 URxvt.font: xft:JetBrainsMono Nerd Font:size=14:antialias=true, xft:Symbola:size=20, xft:Material Icons:size=20,
-st.font:         JetBrainsMono Nerd Font:style:medium:pixelsize=30, xft:IPAPGothic:size=20
+st.font: JetBrainsMono Nerd Font:style:medium:pixelsize=30, xft:IPAPGothic:size=20
 
 URxvt*background: 1
-URxvt*foreground: 15
-
 Sxiv.background: #25292f
-Sxiv.foreground: #e5e9ef
-
+*.foreground: #FF0000
 Xcursor.size: 48
-
 Xft.dpi: 192

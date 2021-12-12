@@ -1,0 +1,4 @@
+#!/bin/bash
+
+notify-send --hint=string:x-dunst-stack-tag:volume -i /usr/share/icons/Dracula/16x16/actions/audio-volume-high.svg "Volume" "$(amixer get Master | grep 'Front Right:\|dB' | sed 's/\(^[a-z0-9 :]\+\[\|\[\|\]\)//gi' | awk '{print $1}')"
+

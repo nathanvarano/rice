@@ -12,8 +12,12 @@ Krita
 Nautilus
 ST
 URXVT
+Pop
+DBeaver
+TablePlus
+Slack
 VS-Code'\
- | rofi -dmenu run -theme dmenu.rasi -p 'RUN' -i)
+ | rofi -dmenu run -theme survive.rasi -p 'run' -i)
 
 [[ -z $selection ]] && exit
 
@@ -41,4 +45,12 @@ elif [[ $selection = 'Krita' ]]; then
 	exec krita
 elif [[ $selection = 'Drawing' ]]; then
 	exec drawing
+elif [[ $selection = 'Pop' ]]; then
+	exec pop
+elif [[ $selection = 'DBeaver' ]]; then
+	exec dbeaver
+elif [[ $selection = 'TablePlus' ]]; then
+	exec tableplus
+elif [[ $selection = 'Slack' ]]; then
+	exec slack
 fi

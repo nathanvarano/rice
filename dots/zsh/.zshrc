@@ -4,7 +4,7 @@ export VIMINIT="set nocp | source ${XDG_CONFIG_HOME:-$HOME/.config}/vim/vimrc"
 
 export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#21292F,hl:#96BFFF --color=fg+:#f8f8f2,bg+:#44475a,hl+:#96BFFF --color=info:#C5DFFF,prompt:#8CA2E6,pointer:#96BFFF --color=marker:#96BFFF,spinner:#C5DFFF,header:#C5DFFF'
 
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+#export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 HISTSIZE=10000
 SAVEHIST=10000
@@ -34,8 +34,6 @@ zle-line-init() {
 	echo -ne "\e[5 q"
 }
 zle -N zle-line-init
-#echo -ne '\e[5 q' # Use beam on startup
-#preexec() { echo -ne '\e[5 q' ;} # Use beam for each new prompt
 
 _fix_cursor() {
 	echo -ne '\e[5 q'
@@ -52,19 +50,19 @@ _comp_options+=(globdots)
 
 [[ $- != *i* ]] && return
 
-#source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOME/.local/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/scr/srcenv
+source $HOME/.config/zsh/zsh_alias
 
-alias ls='ls --color=auto'
-alias sxiv='sxiv -s f'
-alias todo='auton todo'
-#alias vim='vim -u ${XDG_CONFIG_HOME:-$HOME/.config}/vim/vimrc'
-alias startx='startx "$XDG_CONFIG_HOME/X11/xinitrc"'
-alias ranger='ranger --choosedir=$XDG_CACHE_HOME/ranger/.rangerdir; LASTDIR=`cat $XDG_CACHE_HOME/ranger/.rangerdir`; cd "$LASTDIR"'
 
-PS1='%F{14}%1~ %f%B%F{15} %F{2} %F{15} %b%f '
-randbraille
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' formats '(%b)'
+setopt PROMPT_SUBST
+
+PS1='%F{14}%1~ %f%F{13}${vcs_info_msg_0_} '
 echo ' '
+PATH=/home/nv/rep/cookaborough/bin:$PATH

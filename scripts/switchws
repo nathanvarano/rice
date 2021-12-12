@@ -8,4 +8,42 @@ curr_ws=$(i3-msg -t get_workspaces \
 [[ $curr_ws == $1 ]] && exit
 
 
-i3-msg "rename workspace $curr_ws to 11; rename workspace $1 to $curr_ws; rename workspace 11 to $1;" && sleep 0.1 && i3-msg "workspace number $curr_ws;"
+
+if [ $1 -gt 5 && $curr_ws -lt 6 ]
+then
+	i3-msg "rename workspace $curr_ws to 22;"
+	i3-msg "rename workspace $1 to 11;"
+	i3-msg "workspace number 11"
+	i3-msg "rename workspace 11 to $curr_ws;"
+	i3-msg "rename workspace 22 to $1;"
+	sleep 0.1
+	i3-msg "workspace number $1;"
+	i3-msg "workspace number $curr_ws;"
+elif [ $1 -lt 6 && $curr_ws -gt 5 ]
+then
+	i3-msg "rename workspace $curr_ws to 11;"
+	i3-msg "rename workspace $1 to 22;"
+	i3-msg "workspace number 22"
+	i3-msg "rename workspace 22 to $curr_ws;"
+	i3-msg "rename workspace 11 to $1;"
+	sleep 0.1
+	i3-msg "workspace number $1;"
+	i3-msg "workspace number $curr_ws;"
+elif [ $1 -gt 5 ]
+then
+	i3-msg "rename workspace $curr_ws to 22;"
+	i3-msg "rename workspace $1 to 23;"
+	i3-msg "workspace number 23"
+	i3-msg "rename workspace 23 to $curr_ws;"
+	i3-msg "rename workspace 22 to $1;"
+	sleep 0.1
+	i3-msg "workspace number $curr_ws;"
+else
+	i3-msg "rename workspace $curr_ws to 11;"
+	i3-msg "rename workspace $1 to 12;"
+	i3-msg "workspace number 12"
+	i3-msg "rename workspace 12 to $curr_ws;"
+	i3-msg "rename workspace 11 to $1;"
+	sleep 0.1
+	i3-msg "workspace number $curr_ws;"
+fi

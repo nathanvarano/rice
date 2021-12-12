@@ -1,0 +1,7 @@
+#!/bin/bash
+
+rofi_output=$(rofi -dmenu -theme Pop-Dark-Thin.rasi -p 'Add note')
+
+[[ -z $rofi_output ]] && exit
+
+echo $rofi_output >> $HOME/doc/notes/todo
