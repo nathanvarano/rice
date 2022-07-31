@@ -62,7 +62,8 @@ precmd() { vcs_info }
 # Format the vcs_info_msg_0_ variable
 zstyle ':vcs_info:git:*' formats '(%b)'
 setopt PROMPT_SUBST
-
+eval $(ssh-agent) &>/dev/null
+ssh-add /home/nv/doc/cooka/ckey &>/dev/null
 PS1='%F{14}%1~ %f%F{13}${vcs_info_msg_0_} '
 echo ' '
 PATH=/home/nv/rep/cookaborough/bin:$PATH

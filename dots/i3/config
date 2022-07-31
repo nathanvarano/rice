@@ -4,6 +4,8 @@ set $mod Mod4
 ## Alt
 set $mod2 Mod1
 
+workspace_auto_back_and_forth yes
+
 
 # Monitors
 set $monitor1 DP-0
@@ -91,9 +93,8 @@ bindsym $mod+Shift+0 exec --no-startup-id switchws 10
 # Floating windows
 floating_maximum_size 3840 x 2160
 for_window [class=".*"] move position center
-for_window [class="Pop"] floating enable
+for_window [class="Pop"] floating enable, floating_maximum_size 2560 x 1440
 for_window [class="Org.gnome.Nautilus"] floating enable
-for_window [class="^I3-workspace-switcher$"] floating enable border none
 
 # Borders / Gaps
 hide_edge_borders smart
@@ -119,10 +120,11 @@ font pango:Lato 10
 assign [class="Vivaldi-stable"] $ws8
 assign [class="Google-chrome"] $ws3
 assign [class="code-oss"] $ws2
+assign [class="jetbrains-phpstorm"] $ws2
 assign [class="discord"] $ws7
 assign [class="Pop"] $ws5
 assign [class="Slack"] $ws6
-assign [class="DBeaver"] $ws9
+assign [class="jetbrains-datagrip"] $ws9
 assign [class="TablePlus"] $ws9
 
 
@@ -139,7 +141,7 @@ set $ws_options --borderwidth=16 --selectborderwidth=3 --activestyle=underline -
 bindsym $mod+b workspace number 8; exec --no-startup-id vivaldi-stable
 bindsym $mod+shift+b workspace number 3; exec --no-startup-id google-chrome-stable
 bindsym $mod+p exec --no-startup-id flameshot gui -p $HOME/img/screenshots
-bindsym $mod+shift+s exec --no-startup-id flameshot gui -p $HOME/img/screenshots
+bindsym $mod+shift+s exec --no-startup-id flameshot gui
 bindsym $mod+shift+p exec --no-startup-id flameshot screen -p $HOME/img/screenshots
 bindsym $mod+c workspace number 7; exec --no-startup-id discord
 bindsym $mod+shift+c workspace number 6; exec --no-startup-id slack
@@ -148,7 +150,8 @@ bindsym $mod+n exec --no-startup-id rofinet
 bindsym $mod+o exec --no-startup-id darkbg
 bindsym $mod+shift+o exec --no-startup-id feh --no-fehbg --bg-scale $HOME/img/wallpapers/wallpaper.png
 bindsym $mod+i workspace number 2; exec --no-startup-id code
-bindsym $mod+t workspace number 9; exec --no-startup-id dbeaver
+bindsym $mod+shift+i workspace number 2; exec --no-startup-id phpstorm
+bindsym $mod+t workspace number 9; exec --no-startup-id datagrip
 bindsym $mod+shift+t workspace number 9; exec --no-startup-id tableplus
 bindsym $mod+space exec --no-startup-id rofitodo
 bindsym $mod+Return exec --no-startup-id st
@@ -176,10 +179,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 ## Switch workspaces
-bindsym $mod+Tab exec --no-startup-id i3-workspace-switcher.py --mod Mod4 $ws_options
-bindsym $mod2+Tab exec --no-startup-id i3-workspace-switcher.py --mod Mod1 $ws_options
-bindsym $mod+Shift+Tab exec --no-startup-id i3-workspace-switcher.py --mod Mod4 --reverse $ws_options
-bindsym $mod2+Shift+Tab exec --no-startup-id i3-workspace-switcher.py --mod Mod1 --reverse $ws_options
+bindsym $mod+Tab workspace back_and_forth
+bindsym $mod2+Tab workspace back_and_forth
 
 ## Audio control
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && killall -SIGUSR1 i3status
@@ -220,19 +221,19 @@ bindsym $mod+m split v
 ## Split horizontal
 bindsym $mod+comma split h
 
-## enter fullscreen mode for the focused container
+## Enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
-# bindsym $mod+s layout stacking
-# bindsym $mod+w layout tabbed
-# bindsym $mod+e layout toggle split
+# Change container layout (stacked, tabbed, toggle split)
+# Bindsym $mod+s layout stacking
+# Bindsym $mod+w layout tabbed
+# Bindsym $mod+e layout toggle split
 
 ## Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 bindsym --whole-window $mod+Shift+button1 floating enable
 
-## focus the parent container
+## Focus the parent container
 bindsym $mod+a focus parent
 
 
@@ -244,4 +245,3 @@ exec --no-startup-id flameshot
 exec --no-startup-id dunst
 exec_always --no-startup-id "compton -b --config ~/.config/compton/compton.conf"
 exec --no-startup-id nm-applet
-exec_always --no-startup-id i3-workspace-switcher.py --daemon --size 5

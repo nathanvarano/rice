@@ -1,0 +1,4 @@
+#!/bin/bash
+systemctl start docker
+bash $(git rev-parse --show-toplevel)/docker/sail/sail up --detach
+bash $(git rev-parse --show-toplevel)/docker/sail/sail npm run watch

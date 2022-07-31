@@ -12,6 +12,7 @@ Krita
 Nautilus
 ST
 URXVT
+Phpstorm
 Pop
 DBeaver
 TablePlus
@@ -37,6 +38,10 @@ elif [[ $selection = 'VS-Code' ]]; then
 	exec code
 elif [[ $selection = 'Brave' ]]; then
 	exec brave
+elif [[ $selection = 'Chromium' ]]; then
+	exec chromium
+elif [[ $selection = 'Phpstorm' ]]; then
+	exec $HOME/doc/phpstorm/bin/phpstorm.sh
 elif [[ $selection = 'Nautilus' ]]; then
 	exec nautilus
 elif [[ $selection = 'Kdenlive' ]]; then
